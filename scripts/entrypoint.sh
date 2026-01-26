@@ -21,6 +21,10 @@ bootstrap:
         max_connections: ${POSTGRESQL_MAX_CONNECTIONS:-100}
         max_prepared_transactions: ${POSTGRESQL_MAX_PREPARED_TRANSACTIONS:-0}
         max_locks_per_transaction: ${POSTGRESQL_MAX_LOCKS_PER_TRANSACTION:-64}
+        max_wal_senders: ${POSTGRESQL_MAX_WAL_SENDERS:-10}
+        wal_keep_size: ${POSTGRESQL_WAL_KEEP_SIZE:-128MB}
+        max_wal_size: ${POSTGRESQL_MAX_WAL_SIZE:-1GB}
+        wal_level: ${POSTGRESQL_WAL_LEVEL:-replica}
   initdb:
   - auth-host: md5
   - auth-local: trust
